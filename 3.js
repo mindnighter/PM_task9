@@ -71,7 +71,8 @@ class PersonLog extends Person {
           get: function() { return this.gender },
           set: function(value) { 
             this.#logs.gender.oldValue.push(this.gender);
-            this.#logs.gender.newValue = this.gender = value;
+            this.gender = value;
+            this.#logs.gender.newValue = (this.gender);
           }
       }
     });
@@ -91,6 +92,6 @@ person1.ganderLog = 2;
 person1.ganderLog = 2;
 person1.ganderLog = 2;
 person1.ganderLog = 0;
-person1.ganderLog = 2;
+person1.ganderLog = 4;
 
 person1.logs
